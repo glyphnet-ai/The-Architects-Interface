@@ -1,0 +1,54 @@
+name: Custom build request
+description: Got an idea? Ask for a system prompt framework or a full AI agent built around it.
+title: "[Build] "
+labels: ["custom-build"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell me what you want built. I'll answer here or on the handle you leave below.
+        **Heads up: issues on this repo are public.** Don't include passwords, customer details, phone numbers, addresses or anything private.
+        Nothing is priced or promised until we talk it through.
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you want built?
+      description: In plain words. What should it do, and what keeps going wrong now?
+      placeholder: "An assistant that answers booking questions and never offers a time we're closed."
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Where will you use it?
+      description: The job it does, who it talks to, and a typical conversation or two (keep private details out).
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Which AI do you use?
+      multiple: true
+      options:
+        - ChatGPT
+        - Claude
+        - Gemini
+        - Grok
+        - Other / not sure
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Best handle to reach you
+      description: An X, Instagram or TikTok handle, or just "reply here." No email needed.
+      placeholder: "@yourhandle on X"
+    validations:
+      required: true
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: Before you send
+      options:
+        - label: I understand this issue is public and I left private details out.
+          required: true
